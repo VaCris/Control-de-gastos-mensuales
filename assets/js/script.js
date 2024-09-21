@@ -6,15 +6,16 @@ function clickBoton() {
     const valor = parseFloat(document.getElementById('valorGasto').value);
     const descripcion = document.getElementById('descripcionGasto').value;
 
-    if (nombre && valor >= 0) {
-        const gasto = { nombre, valor, descripcion };
-        gastos.push(gasto);
-        renderGastos();
-        actualizarTotal();
-        limpiarFormulario();
-    } else {
-        alert("Por favor, completa todos los campos.");
+    if (nombre === '' || isNaN(valor) || valor < 0) {
+        alert("completa todos los campos.");
+        return;
     }
+
+    const gasto = { nombre, valor, descripcion };
+    gastos.push(gasto);
+    renderGastos();
+    actualizarTotal();
+    limpiarFormulario();
 }
 
 function renderGastos() {
