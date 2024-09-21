@@ -1,13 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
-
+    font-family: 'Roboto', sans-serif;
     background: url('../img/codigo.svg'), linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
-
-
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     /* Hace que la imagen cubra todo el área del elemento */
-    background-position: right;
+    background-position: center;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -21,6 +18,13 @@ input[type="number"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #00BFFF;
+    background: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 button {
@@ -32,13 +36,16 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
+
 button i {
     margin: 0;
 }
+
 button:hover {
-    background-color: #4cae4c;
+    background-color: #007FFF;
+    transform: translateY(-2px);
 }
 
 ul {
@@ -52,12 +59,15 @@ ul {
 
 ul li {
     padding: 10px;
-    background-color: #041832;
+    background-color: #0d2583e7;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    transition: background-color 0.3s;
 }
-
+ul li:hover{
+    background-color: rgba(6, 58, 172, 0.89);
+}
 ul li:last-child {
     border-bottom: none;
 }
@@ -76,7 +86,7 @@ ul li:last-child {
 
     border-radius: 24px;
     color: white;
-    box-shadow: 4px 4px 20px 0px #01080E26;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid #1875E8
 }
 
@@ -87,7 +97,8 @@ ul li:last-child {
     align-items: center;
     flex-direction: column;
     padding: 45px;
-    opacity: 0px;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .img-container {
@@ -111,6 +122,10 @@ ul li:last-child {
     margin-top: 20px;
     font-size: 24px;
     text-align: center;
-    color: #fff;
-
+    color: #f5ebeb;
+    font-weight: bold;
+    padding: 10px;
+    background:  rgba(59, 134, 221, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
